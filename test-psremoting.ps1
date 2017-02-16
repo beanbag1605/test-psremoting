@@ -135,7 +135,7 @@ happysysadm.com
         if($DCOM){
             Write-Verbose "$(Get-Date) - Trying to connect to $Computer with DCOM to retrieve Domain name and Operating System"
             try {
-                $SessionOp = New-CimSessionOption –Protocol DCOM
+                $SessionOp = New-CimSessionOption -Protocol DCOM
                 $CimSession = New-CimSession -ComputerName $Computer -Credential $Credential `
                     -SessionOption $SessionOp -Name $Computer -OperationTimeoutSec 1 -ErrorAction Stop
                 $Result.Dcom = 'OK'
